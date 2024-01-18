@@ -127,8 +127,13 @@ function getStringsLength(arr) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  const value = arr.reduce((sum, current) => sum + current, 0);
+  const result = value / arr.length;
+  if (Number.isNaN(result)) {
+    return 0;
+  }
+  return +result.toFixed(2);
 }
 
 /**
