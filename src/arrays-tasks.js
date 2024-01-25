@@ -438,10 +438,12 @@ function getIdentityMatrix(n) {
  *    getIndicesOfOddNumbers([2, 4, 6, 8, 10]) => []
  *    getIndicesOfOddNumbers([11, 22, 33, 44, 55]) => [0, 2, 4]
  */
-function getIndicesOfOddNumbers(/* numbers */) {
-  throw new Error('Not implemented');
+function getIndicesOfOddNumbers(numbers) {
+  return numbers
+    .map((item, index) => (item % 2 !== 0 ? index : undefined))
+    .filter((item) => typeof item !== 'undefined');
 }
-
+// arr.splice(index, index + 1)
 /**
  * Returns the array of RGB Hex strings from the specified array of numbers.
  *
