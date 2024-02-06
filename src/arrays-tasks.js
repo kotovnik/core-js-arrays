@@ -560,12 +560,6 @@ function shiftArray(arr, n) {
   const arrayN = arr.slice(arr.length - n, arr.length);
   const arrayOst = arr.splice(0, arr.length - n);
   return arrayN.concat(arrayOst);
-
-  // Сдвигает массив на n позиций.
-  // Если значение n отрицательное, массив сдвигается влево;
-  // если положительное, он сдвигается вправо.
-  // arr.splice(1, 1);  начиная с индекса 1, удалить 1 элемент
-  // arr.slice([start], [end]) Он возвращает новый массив, в который копирует все элементы с индекса start до end
 }
 
 /**
@@ -619,8 +613,26 @@ function sortDigitNamesByNumericOrder(arr) {
  *   swapHeadAndTail([]) => []
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
+function swapHeadAndTail(arr) {
+  if (arr.length === 0 || arr.length === 1) {
+    return arr;
+  }
+  if (arr.length === 2 || arr.length === 3) {
+    return arr.reverse();
+  }
+  const arrayHead = arr.slice(Math.ceil(arr.length / 2), arr.length);
+  const middle = arr.slice(
+    Math.floor(arr.length / 2),
+    Math.ceil(arr.length / 2)
+  );
+  const arrayTail = arr.slice(0, Math.floor(arr.length / 2));
+  return arrayHead.concat(middle, arrayTail);
+
+  // Сдвигает массив на n позиций.
+  // Если значение n отрицательное, массив сдвигается влево;
+  // если положительное, он сдвигается вправо.
+  // arr.splice(1, 1);  начиная с индекса 1, удалить 1 элемент
+  // arr.slice([start], [end]) Он возвращает новый массив, в который копирует все элементы с индекса start до end
 }
 
 module.exports = {
