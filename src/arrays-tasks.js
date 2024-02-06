@@ -495,9 +495,16 @@ function getMaxItems(arr, n) {
  *    findCommonElements([1, 2, 3], ['a', 'b', 'c']) => []
  */
 function findCommonElements(/* arr1, arr2 */) {
+  // arr.includes(item, from)
+  // let result = arr.reduce((sum, current) => sum + current, 0);
+  // const array = arr1.reduce(
+  //   (accumulator, item) =>
+  //     arr2.includes(item) ? accumulator.push(item) : undefined,
+  //   []
+  // );
+  // return array.filter((item) => item !== 'undefined');
   throw new Error('Not implemented');
 }
-
 /**
  * Finds the length of the longest increasing subsequence of a given array of integers.
  *
@@ -544,8 +551,26 @@ function propagateItemsByPositionIndex(/* arr */) {
  *    shiftArray(['a', 'b', 'c', 'd'], -1) => ['b', 'c', 'd', 'a']
  *    shiftArray([10, 20, 30, 40, 50], -3) => [40, 50, 10, 20, 30]
  */
-function shiftArray(/* arr, n */) {
-  throw new Error('Not implemented');
+function shiftArray(arr, n) {
+  if (n < 0) {
+    const arrayN = arr.slice(0, -n);
+    console.log(arrayN);
+    const arrayOst = arr.splice(-n, arr.length - 1);
+    console.log(arrayOst);
+    return arrayOst.concat(arrayN);
+  }
+  const arrayN = arr.slice(arr.length - n, arr.length);
+  console.log(arrayN);
+  const arrayOst = arr.splice(0, arr.length - n);
+  console.log(arrayOst);
+  // console.log(arrayN.splice(0, 0, arrayOst));
+  return arrayN.concat(arrayOst);
+
+  // Сдвигает массив на n позиций.
+  // Если значение n отрицательное, массив сдвигается влево;
+  // если положительное, он сдвигается вправо.
+  // arr.splice(1, 1);  начиная с индекса 1, удалить 1 элемент
+  // arr.slice([start], [end]) Он возвращает новый массив, в который копирует все элементы с индекса start до end
 }
 
 /**
