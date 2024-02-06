@@ -554,16 +554,11 @@ function propagateItemsByPositionIndex(/* arr */) {
 function shiftArray(arr, n) {
   if (n < 0) {
     const arrayN = arr.slice(0, -n);
-    console.log(arrayN);
     const arrayOst = arr.splice(-n, arr.length - 1);
-    console.log(arrayOst);
     return arrayOst.concat(arrayN);
   }
   const arrayN = arr.slice(arr.length - n, arr.length);
-  console.log(arrayN);
   const arrayOst = arr.splice(0, arr.length - n);
-  console.log(arrayOst);
-  // console.log(arrayN.splice(0, 0, arrayOst));
   return arrayN.concat(arrayOst);
 
   // Сдвигает массив на n позиций.
