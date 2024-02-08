@@ -43,7 +43,6 @@ function sumArrays(arr1, arr2) {
     return resultArray;
   }
   const resultArray = arr2.map((item, index) => item + (arr1[index] || 0));
-  console.log(resultArray);
   return resultArray;
 }
 
