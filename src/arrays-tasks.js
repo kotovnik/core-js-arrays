@@ -494,16 +494,9 @@ function getMaxItems(arr, n) {
  *    findCommonElements(['a', 'b', 'c'], ['b', 'c', 'd']) => [ 'b', 'c' ]
  *    findCommonElements([1, 2, 3], ['a', 'b', 'c']) => []
  */
-function findCommonElements(/* arr1, arr2 */) {
-  // arr.includes(item, from)
-  // let result = arr.reduce((sum, current) => sum + current, 0);
-  // const array = arr1.reduce(
-  //   (accumulator, item) =>
-  //     arr2.includes(item) ? accumulator.push(item) : undefined,
-  //   []
-  // );
-  // return array.filter((item) => item !== 'undefined');
-  throw new Error('Not implemented');
+function findCommonElements(arr1, arr2) {
+  const resultArray = arr1.filter((element) => arr2.includes(element));
+  return resultArray;
 }
 /**
  * Finds the length of the longest increasing subsequence of a given array of integers.
@@ -627,12 +620,6 @@ function swapHeadAndTail(arr) {
   );
   const arrayTail = arr.slice(0, Math.floor(arr.length / 2));
   return arrayHead.concat(middle, arrayTail);
-
-  // Сдвигает массив на n позиций.
-  // Если значение n отрицательное, массив сдвигается влево;
-  // если положительное, он сдвигается вправо.
-  // arr.splice(1, 1);  начиная с индекса 1, удалить 1 элемент
-  // arr.slice([start], [end]) Он возвращает новый массив, в который копирует все элементы с индекса start до end
 }
 
 module.exports = {
