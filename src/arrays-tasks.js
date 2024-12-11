@@ -146,12 +146,6 @@ function getAverage(arr) {
  *    isSameLength(['cat', 'dog', 'elephant']) => false
  */
 function isSameLength(arr) {
-  // const arrFiltered = arr.filter((item) => item.length === arr[0].length);
-  // console.log(arr);
-  // console.log(arrFiltered);
-  // console.log(arr.length, arrFiltered.length);
-  // console.log(arr.length === arrFiltered.length);
-  // return arr.length === arrFiltered.length;
   return arr.every((item) => item.length === arr[0].length);
 }
 
@@ -283,8 +277,6 @@ function createNDimensionalArray(n, size) {
     return Array(size).fill(0);
   }
   return Array(size).fill(createNDimensionalArray(n - 1, size));
-  // const arrN = Array(size).fill(0);
-  // return Array(n).fill(arrN);
 }
 
 /**
@@ -448,7 +440,6 @@ function getIndicesOfOddNumbers(numbers) {
     .map((item, index) => (item % 2 !== 0 ? index : undefined))
     .filter((item) => typeof item !== 'undefined');
 }
-// arr.splice(index, index + 1)
 /**
  * Returns the array of RGB Hex strings from the specified array of numbers.
  *
@@ -547,7 +538,6 @@ function findLongestIncreasingSubsequence(nums) {
  *  propagateItemsByPositionIndex([ 1,2,3,4,5 ]) => [ 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-  // throw new Error('Not implemented');
   if (arr.length === 1) {
     return arr;
   }
@@ -555,7 +545,6 @@ function propagateItemsByPositionIndex(arr) {
     return new Array(index + 1).fill(item);
   });
   const res = result.flat(2);
-  console.log(`result: ${result}`);
   return res;
 }
 
